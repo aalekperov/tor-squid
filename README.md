@@ -1,6 +1,6 @@
 # tor-squid
 
-The utility creates the proxy to access the Internet. To use the utility docker and docker-compose should be installed. Use the ofiicial docs to install: 
+Using squid and tor containers the utility gives an access the Internet thru proxy. To use the utility docker and docker-compose should be installed. Use the ofiicial docs to install: 
 - https://docs.docker.com/engine/install/
 - https://docs.docker.com/compose/install/. Also you can install docker-compose thru pip.
 
