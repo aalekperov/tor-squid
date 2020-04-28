@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  tor:
+    image: dperson/torproxy
+    container_name: tor
+    ports:
+      - 8118:8118
+      - 9050:9050
+    hostname: tor
+    restart: always
+
+  squid:
+    image: sameersbn/squid:3.5.27-2
+    container_name: squid
+    hostname: squid
+    ports:
+      - 3128:3128
+    volumes:
+      - ./squid/squid.conf:/etc/squid/squid.conf
+      - /srv/docker/squid/cache:/var/spool/squid
+      - ./squid/acls:/acls
+    restart: always
+    links:
+      - tor
+
